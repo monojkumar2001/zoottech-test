@@ -1,0 +1,100 @@
+div#bg-nav {
+    background: var(--black-color);
+}
+
+.page-banner-area::before {
+    content: "";
+    background: #14042cc2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-banner-area {
+    position: relative;
+}
+
+.row-title-text {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Jost";
+}
+
+.faq-row {
+    border: 1px solid #feb302;
+    padding: 0 10px !important;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #feb302 !important;
+}
+
+.main-slides-content span {
+    text-transform: uppercase;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #190f4b7a;
+    display: none;
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.popup-content {
+    width: 500px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.popup-image img {
+    width: 200px;
+}
+
+.popup-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-text {
+    text-align: center;
+}
+
+.popup-text h3 {
+    color: #07ff8e;
+    font-size: 30px;
+}
+
+.popup-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 26px;
+    background: #fff;
+    color: #ffc107;
+    cursor: pointer;
+}
