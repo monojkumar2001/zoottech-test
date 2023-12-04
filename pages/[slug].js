@@ -6,15 +6,28 @@ import Link from "next/link";
 import Contact from "./components/Contact";
 import ContactInfo from "./components/ContactInfo";
 
-export async function getStaticPaths() {
-  const response = await axios.get("/services");
+export async function getServerSideProps({ params }) {
+  try {
+    const slug = params.slug;
+    const response = await axios.get(
+      `https://test.smartcardgenerator.net/api/services/${slug}`
+    );
+    const service = response.data;
 
-  return {
-    fallback: false,
-    paths: response.data.map((service) => ({
-      params: { slug: service.slug.toString() },
-    })),
-  };
+    return {
+      props: {
+        service,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    return {
+      props: {
+        service: null, // or handle error as needed
+      },
+    };
+  }
 }
 
 export default function ServiceDetails({ service }) {
@@ -93,13 +106,14 @@ export default function ServiceDetails({ service }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const response = await axios.get(`/services/${params.slug}`);
+// export async function getStaticProps({ params }) {
+//   const response = await axios.get(`/services/${params.slug}`);
 
-  return {
-    props: {
-      service: response.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       service: response.data,
+//     },
+//   };
+// }
+
 ServiceDetails.layout = AppLayout;
