@@ -17,16 +17,6 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const response = await axios.get(`/services/${params.slug}`);
-
-  return {
-    props: {
-      service: response.data,
-    },
-  };
-}
-
 export default function ServiceDetails({ service }) {
   return (
     <>
@@ -101,5 +91,15 @@ export default function ServiceDetails({ service }) {
       <ContactInfo />
     </>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const response = await axios.get(`/services/${params.slug}`);
+
+  return {
+    props: {
+      service: response.data,
+    },
+  };
 }
 ServiceDetails.layout = AppLayout;
