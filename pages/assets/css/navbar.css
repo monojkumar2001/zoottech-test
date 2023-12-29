@@ -183,8 +183,18 @@ Navbar Area CSS
 
 .main-navbar .navbar .navbar-brand {
     padding: 0 30px 0 0;
+    display: flex;
+    align-items: center;
+    gap:10px;
 }
 
+.navbar-brand span {
+    background: radial-gradient( circle, #a66bff, #c666ef, #dd62df, #ee61cf, #fb64bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+    font-weight: 900;
+}
 .main-navbar .navbar ul {
     padding-left: 0;
     list-style-type: none;

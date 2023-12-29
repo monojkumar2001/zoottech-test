@@ -38,7 +38,10 @@ function Header() {
               <div className="main-responsive-menu">
                 <div className="logo">
                   <Link href={"/"}>
-                    <img src="/assets/images/logo.png" alt="image" />
+                    <div>
+                      <img src="/assets/images/logo.png" alt="image" />
+                      <b>Zoom Tech It</b>
+                    </div>
                   </Link>
                 </div>
                 <div className={`${mobileMenu ? "active" : ""} mobile-menu `}>
@@ -92,9 +95,12 @@ function Header() {
             <div className="container-fluid">
               <nav className="navbar navbar-expand-md navbar-light">
                 <Link href={"/"}>
-                  <a className="navbar-brand">
-                    <img src="/assets/images/logo.png" alt="image" />
-                  </a>
+                  <div className="navbar-brand">
+                    <a>
+                      <img src="/assets/images/logo.png" alt="image" />
+                    </a>
+                    <span>Zoom Tech It</span>
+                  </div>
                 </Link>
 
                 <div
@@ -249,9 +255,8 @@ function Header() {
 
       {/* <!-- Sidebar Modal --> */}
       <div
-        className={`${
-          sidebarActive ? "show d-block" : ""
-        } sidebarModal modal right fade`}
+        className={`${sidebarActive ? "show d-block" : ""
+          } sidebarModal modal right fade`}
         id="sidebarModal"
         tabIndex="-1"
         role="dialog"
